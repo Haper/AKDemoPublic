@@ -1,0 +1,22 @@
+.BasicListMainContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: visible;
+
+  .BasicListItemContainer {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    padding: 10px 20px;
+    transition: all 0.5s ease-in-out;
+    
+    // &:not(:last-child) {
+    //   border-bottom: 1px solid var(--list-bg-color);
+    // }
+
+    &:hover {
+      background-color: var(--list-bg-color);
+    }
+  }
+}

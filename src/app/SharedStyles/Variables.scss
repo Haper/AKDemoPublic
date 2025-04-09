@@ -1,0 +1,29 @@
+@use './Colors.scss';
+
+:root {
+  --default-text-color: theme("colors.neutral.800"); //#333333
+  --default-bg-color: theme("colors.neutral.50");
+
+  --border-color: #{Colors.$neutral-350};
+  --border-color-2: theme("colors.neutral.200"); //#efefef;
+  --border-color-focus: theme("colors.blue.400");
+
+  --list-bg-color: theme("colors.neutral.50"); //#fafafa;
+
+  --scrollbar-bg-color: theme("colors.neutral.50");
+  --scrollbar-thumb-color: theme("colors.blue.400");
+}
+
+[data-theme="dark"] {
+  --default-text-color: theme("colors.neutral.100");
+  --default-bg-color: theme("colors.neutral.800"); //#333333
+
+  --border-color: theme("colors.neutral.700");
+  --border-color-2: theme("colors.neutral.500");
+  --border-color-focus: theme("colors.neutral.400");
+
+  --list-bg-color: theme("colors.neutral.800");
+
+  --scrollbar-bg-color: theme("colors.neutral.700");
+  --scrollbar-thumb-color: theme("colors.amber.700");
+}

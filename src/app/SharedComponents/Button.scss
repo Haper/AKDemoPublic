@@ -1,0 +1,10 @@
+.ButtonMainContainer {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+  transition: scale 0.2s ease-in-out;
+
+  &:hover {
+    scale: 1.1;
+  }
+}

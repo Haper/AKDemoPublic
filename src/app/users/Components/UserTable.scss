@@ -1,0 +1,117 @@
+@use "../../SharedStyles/Colors.scss";
+
+:root {
+  --user-table-sticky-bg: #{Colors.$white-t50};
+  --user-table-sticky-cell-hover-bg: theme("colors.sky.100");
+  --user-table-sticky-cell-selected-bg: theme("colors.sky.200");
+  --user-table-icon-border: theme("colors.white");
+}
+
+[data-theme="dark"] {
+  --user-table-sticky-bg: #{Colors.$black-t50};
+  --user-table-sticky-cell-hover-bg: theme("colors.gray.700");
+  --user-table-sticky-cell-selected-bg: theme("colors.gray.600");
+  --user-table-icon-border: theme("colors.gray.300");
+}
+
+.UsersTableMainContainer {
+  position: relative;
+  text-align: left;
+  min-width: 100%;
+  border-collapse: separate;
+  border-spacing: 0px;
+
+  td,
+  th {
+    padding: 10px;
+    max-width: 200px; // remove for full width columns
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-width: 0px;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  }
+
+  th {
+    padding-top: 90px;
+    position: sticky;
+    top: 0px;
+    background-color: var(--user-table-sticky-bg);
+    -webkit-backdrop-filter: blur(6.3px);
+    backdrop-filter: blur(6.3px);
+    z-index: 10;
+    border-bottom: 1px solid var(--border-color-2);
+  }
+
+  th:nth-child(1),
+  td:nth-child(1) {
+    position: sticky;
+    left: 0px;
+    z-index: 20;
+    border-right: 1px solid var(--border-color-2);
+  }
+  th:nth-child(1) {
+    z-index: 21;
+  }
+
+  td:nth-child(1) {
+    background-color: var(--user-table-sticky-bg);
+    -webkit-backdrop-filter: blur(6.3px);
+    backdrop-filter: blur(6.3px);
+    max-width: unset;
+    width: 1px;
+    cursor: pointer;
+  }
+  @media (max-width: 768px) {
+    td:nth-child(1) {
+      max-width: 200px;
+      background-color: transparent;
+      -webkit-backdrop-filter: unset;
+      backdrop-filter: unset;
+      border: unset;
+    }
+  }
+
+  td:nth-child(5) {
+    max-width: unset;
+    width: 1px;
+  }
+  td:nth-child(7) {
+    max-width: unset;
+    width: 1px;
+  }
+
+  tbody {
+    .Cell {
+      display: flex;
+      flex-direction: flex-row;
+      align-items: center;
+      border-radius: 0.5rem;
+      gap: 0.25rem;
+      transition: background-color 0.3s ease-in-out;
+
+      &:hover {
+        background-color: var(--user-table-sticky-cell-hover-bg);
+      }
+    }
+
+    .SelectedCell {
+      background-color: var(--user-table-sticky-cell-selected-bg);
+    }
+    
+    .LoaderCell {
+      height: 100%;
+      background-color: unset;
+      cursor: default;
+    }
+  }
+
+  .UsersListIcon {
+    min-width: 64px;
+    width: 64px;
+    height: 64px;
+    border-radius: 32px;
+    object-fit: cover;
+    overflow: hidden;
+    border: 2px solid var(--user-table-icon-border);
+  }
+}

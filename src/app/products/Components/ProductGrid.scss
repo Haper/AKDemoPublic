@@ -1,0 +1,103 @@
+@use "../../SharedStyles/Colors.scss";
+
+:root {
+  --prod-grid-item-bg-1: antiquewhite;
+  --prod-grid-item-bg-2: aliceblue;
+  --prod-grid-item-bg-3: beige;
+  --prod-grid-price-bg: #{Colors.$white-t50};
+}
+
+[data-theme="dark"] {
+  --prod-grid-item-bg-1: theme("colors.gray.700");
+  --prod-grid-item-bg-2: theme("colors.gray.800");
+  --prod-grid-item-bg-3: theme("colors.gray.900");
+  --prod-grid-price-bg: #{Colors.$white-t20};
+}
+
+.ProductGridMainContainer {
+  .ProductsListThumbnail {
+    width: 150px;
+    height: auto;
+    z-index: 1;
+  }
+
+  .ProductsListBgThumbnail {
+    position: absolute;
+    width: 150%;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: contain;
+    opacity: 0;
+    transform-origin: center;
+    animation: bgRotation 20s infinite forwards linear paused;
+    transition: opacity 1s linear;
+  }
+
+  @keyframes bgRotation {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    50% {
+      transform: translate(-50%, -50%) rotate(180deg);
+    }
+
+    100% {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+
+  .BasicGridItemContainer:nth-child(3n + 1) {
+    background-color: var(--prod-grid-item-bg-1);
+  }
+
+  .BasicGridItemContainer:nth-child(3n + 2) {
+    background-color: var(--prod-grid-item-bg-2);
+  }
+
+  .BasicGridItemContainer:nth-child(3n) {
+    background-color: var(--prod-grid-item-bg-3);
+  }
+
+  .BasicGridItemContainer {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    text-decoration: none;
+    color: unset;
+    height: 300px;
+
+    &:hover {
+      .ProductsListBgThumbnail {
+        opacity: 0.2;
+        animation-play-state: running;
+      }
+      filter: brightness(1.1);
+    }
+
+    .PriceContainer {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      background-color: var(--prod-grid-price-bg);
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      width: 100%;
+      padding: 8px 10px;
+      z-index: 2;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .BasicGridItemContainer {
+      gap: 5px;
+      align-items: flex-start;
+      text-align: left;
+      min-height: 200px;
+    }
+  }
+}

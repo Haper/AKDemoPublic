@@ -1,0 +1,65 @@
+:root {
+  --search-bar-border-color: theme("colors.neutral.800");
+  --search-bar-clear-button-color: theme("colors.neutral.800");
+}
+
+[data-theme="dark"] {
+  --search-bar-border-color: theme("colors.neutral.100");
+  --search-bar-clear-button-color: theme("colors.neutral.100");
+}
+
+.SearchBarMainContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 5px;
+  width: 48px;
+  transition: width 0.3s ease-in-out;
+  overflow: hidden;
+
+  .TextInputMainContainer {
+    flex: 1;
+    justify-content: flex-end;
+    overflow: hidden;
+    width: 0px;
+    opacity: 0;
+    border: 3px solid var(--search-bar-border-color);
+    border-radius: 10px;
+    transition: width 0.3s ease-in-out, opacity 0.2s ease-in-out 0.1s;
+
+    input {
+      padding: 6px 8px;
+    }
+    
+    .TextInputRightButtonContainer {
+      color: var(--search-bar-clear-button-color);
+    }
+  }
+
+  .ButtonMainContainer {
+    transform-origin: center;
+    transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1) 0.2s, scale 0.2s ease-in-out;
+    transform: rotate(0deg);
+  }
+}
+
+.SearchBarMainContainerOn {
+  width: 350px;
+
+  .TextInputMainContainer {
+    width: unset;
+    opacity: 1;
+    transition: width 0.3s ease-in-out, opacity 0.2s ease-in-out;
+  }
+
+  .ButtonMainContainer {
+    transform: rotate(360deg);
+  }
+
+  @media (max-width: 768px) {
+    max-width: 700px;
+    width: calc(100% - 48px - 5px);
+    margin-left: -15px;
+  }
+}

@@ -1,0 +1,42 @@
+.Cursor {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+  position: fixed;
+  z-index: 9999999;
+  pointer-events: none;
+  mix-blend-mode: difference;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.Cursor-clicked {
+  transform: scale(4.5);
+}
+
+.Cursor-f {
+  width: 36px;
+  height: 36px;
+  position: fixed;
+  z-index: 9999999;
+  top: 0;
+  left: 0;
+  background-image: url("/cursor_frame.svg");
+  background-size: cover;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  opacity: 0.5;
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.Cursor-f-clicked {
+  transform: scale(0.4);
+}
+
+* {
+  cursor: none !important;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}

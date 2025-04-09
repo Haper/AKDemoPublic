@@ -1,0 +1,94 @@
+:root {
+  --message-form-section-bg: theme("colors.sky.50");
+  --message-form-section-border-color: transparent;
+  --message-form-submit-button-bg-hover: theme("colors.sky.200");
+  --message-form-submit-button-bg-active: theme("colors.sky.300");
+  --message-form-submit-button-color-disabled: theme("colors.gray.400");
+  --message-form-submit-button-bg-disabled: transparent;
+  --message-form-section-decline-icon-color: theme("colors.red.500");
+}
+
+[data-theme="dark"] {
+  --message-form-section-bg: theme("colors.gray.800");
+  --message-form-section-border-color: var(--border-color);
+  --message-form-submit-button-bg-hover: theme("colors.sky.700");
+  --message-form-submit-button-bg-active: theme("colors.sky.600");
+  --message-form-submit-button-color-disabled: theme("colors.gray.600");
+  --message-form-submit-button-bg-disabled: transparent;
+  --message-form-section-decline-icon-color: theme("colors.amber.500");
+}
+
+.MessageFormMainContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  background-color: var(--message-form-section-bg);
+  padding: 30px;
+  border: 1px solid var(--message-form-section-border-color);
+  border-radius: 15px;
+  gap: 28px;
+  transition: background-color 0.3s ease-in-out;
+  margin: 20px;
+
+  .TextInputMainContainer {
+    width: 100%;
+    max-width: 25rem;
+  }
+
+  .TextInputVerticalContainer {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+    max-width: 25rem;
+
+    p {
+      color: var(--message-form-section-decline-icon-color);
+    }
+
+    .AcceptIconContainer {
+      position: absolute;
+      top: 50%;
+      left: calc(100% + 5px);
+      transform: translateY(calc(-50% - 2px));
+      color: var(--message-form-section-accept-icon-color);
+    }
+
+    .DeclineIconContainer {
+      color: var(--message-form-section-decline-icon-color);
+    }
+  }
+
+  .SubmitButton {
+    border-radius: 8px;
+    padding: 4px 8px;
+    border: 1px solid var(--border-color);
+
+    &:hover {
+      background-color: var(--message-form-submit-button-bg-hover);
+    }
+
+    &:active {
+      background-color: var(--message-form-submit-button-bg-active);
+    }
+
+    &:focus, &:focus-visible {
+      border-color: var(--border-color-focus);
+    }
+
+    &:disabled {
+      color: var(--message-form-submit-button-color-disabled);
+      background-color: var(--message-form-submit-button-bg-disabled);
+    }
+  }
+
+  .CloseButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+}

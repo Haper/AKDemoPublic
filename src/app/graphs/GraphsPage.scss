@@ -1,0 +1,18 @@
+.DiagramsPageMainContainer {
+  overflow-x: hidden;
+  
+  .BasicPageCenterContainer {
+    justify-content: center;
+    padding: 100px 20px 20px;
+    overflow-x: hidden;
+  }
+
+  @media (max-width: 768px) {
+    .BasicPageCenterContainer {
+      min-height: 100vh;
+      min-height: 100dvh;
+      overflow-y: visible;
+      overflow-x: hidden;
+    }
+  }
+}

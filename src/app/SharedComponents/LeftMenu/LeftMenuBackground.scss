@@ -1,0 +1,50 @@
+.LeftMenuBackground {
+  position: absolute;
+  top: 0;
+  left: -20%;
+  width: 140%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.Hills {
+  position: absolute;
+  width: 500px;
+  height: auto;
+}
+
+.One {
+  animation: move 10s infinite alternate ease-in-out;
+
+  .GradientStart {
+    stop-color: var(--lm-hill-color-1-1);
+  }
+
+  .GradientEnd {
+    stop-color: var(--lm-hill-color-1-2);
+  }
+}
+
+.Two {
+  animation: move 7s infinite alternate ease-in-out;
+
+  .GradientStart {
+    stop-color: var(--lm-hill-color-2-1);
+  }
+
+  .GradientEnd {
+    stop-color: var(--lm-hill-color-2-2);
+  }
+}
+
+// Add rotation for Firefox smooth animation
+@keyframes move {
+  0% {
+    transform: translateX(-40px) rotate(0.1deg);
+    transform: translateY(-40px) rotate(0.1deg);
+  }
+  100% {
+    transform: translateX(40px) rotate(0.1deg);
+    transform: translateY(40px) rotate(0.1deg);
+  }
+}

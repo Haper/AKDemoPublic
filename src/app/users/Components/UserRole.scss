@@ -1,0 +1,45 @@
+:root {
+  --user-role-admin-bg: theme("colors.blue.200");
+  --user-role-moderator-bg: theme("colors.orange.200");
+  --user-role-user-bg: theme("colors.green.200");
+
+  --user-role-admin-border-color: theme("colors.blue.300");
+  --user-role-moderator-border-color: theme("colors.orange.300");
+  --user-role-user-border-color: theme("colors.green.300");
+
+  --user-role-admin-color: theme("colors.blue.700");
+  --user-role-moderator-color: theme("colors.orange.700");
+  --user-role-user-color: theme("colors.green.700");
+}
+
+[data-theme="dark"] {
+  --user-role-admin-bg: theme("colors.blue.900");
+  --user-role-moderator-bg: theme("colors.orange.900");
+  --user-role-user-bg: theme("colors.green.900");
+
+  --user-role-admin-border-color: theme("colors.blue.700");
+  --user-role-moderator-border-color: theme("colors.orange.700");  
+  --user-role-user-border-color: theme("colors.green.700");  
+
+  --user-role-admin-color: theme("colors.blue.300");
+  --user-role-moderator-color: theme("colors.orange.300");  
+  --user-role-user-color: theme("colors.green.300");
+}
+
+.UserRoleMainContainerAdmin {
+  color: var(--user-role-admin-color);
+  background-color: var(--user-role-admin-bg);
+  border: 1px solid var(--user-role-admin-border-color);
+}
+
+.UserRoleMainContainerModerator {
+  color: var(--user-role-moderator-color);
+  background-color: var(--user-role-moderator-bg);
+  border: 1px solid var(--user-role-moderator-border-color);
+}
+
+.UserRoleMainContainerUser {
+  color: var(--user-role-user-color);
+  background-color: var(--user-role-user-bg);
+  border: 1px solid var(--user-role-user-border-color);
+}

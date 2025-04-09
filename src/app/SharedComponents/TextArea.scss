@@ -1,0 +1,47 @@
+.TextAreaMainContainer {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+
+  &:focus-within {
+    border-color: var(--border-color-focus);
+  }
+
+  textarea {
+    padding: 4px 8px;
+    min-height: 8em;
+    flex: 1;
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: var(--default-text-color);
+
+    appearance: none;
+    -webkit-appearance: none;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+  }
+
+  .TextAreaLabel {
+    position: absolute;
+    bottom: calc(100% + 4px);
+    left: 0px;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    opacity: 0.5;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 768px) {
+    font-size: unset;
+    line-height: unset;
+  }
+}

@@ -1,0 +1,31 @@
+@use "../../../SharedStyles/Colors.scss";
+
+:root {
+  --prod-det-review-item-bg: #{Colors.$white-t30};
+}
+
+.ReviewListMainContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+
+  .ReviewListItemContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+    padding: 10px;
+    background-color: var(--prod-det-review-item-bg);
+    border-radius: 8px;
+    border-top-right-radius: 0px;
+    border: 1px solid var(--border-color);
+    min-width: 200px;
+    max-width: 600px;
+    text-align: right;
+  }
+
+  .ReviewListItemContainer:not(:last-child) {
+    margin-bottom: 15px;
+  }
+}
