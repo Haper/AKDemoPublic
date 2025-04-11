@@ -1,0 +1,36 @@
+.LeftMenuItemMainContainer {
+  display: flex;
+  flex-shrink: 0;
+  cursor: pointer;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  z-index: 1;
+
+  &:hover {
+    border-color: var(--lm-item-border-color-hover);
+  }
+
+  a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--lm-item-color);
+    padding: 10px;
+    flex: 1;
+  }
+}
+
+.LeftMenuItemMainContainerActive {
+  border-color: var(--lm-item-active-border-color);
+  background-color: var(--lm-item-active-bg);
+}

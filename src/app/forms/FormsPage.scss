@@ -1,0 +1,27 @@
+@use '../SharedStyles/Colors.scss';
+
+:root {
+  --forms-bg: theme("colors.neutral.50");
+}
+
+[data-theme="dark"] {
+  --forms-bg: theme("colors.gray.800");
+}
+
+.FormsPageMainContainer {
+  background-color: var(--forms-bg);
+
+  .BasicPageCenterContainer {
+    padding: 24px;
+    padding-top: 104px;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+
+    hr {
+      width: 100%;
+      border-color: var(--border-color);
+      mask-image: linear-gradient(90deg, transparent, white 3rem, white calc(100% - 3rem), transparent);
+    }
+  }
+}

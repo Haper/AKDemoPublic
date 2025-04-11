@@ -1,0 +1,48 @@
+@use '../SharedStyles/Utils.scss';
+
+.SwitchButtonMainContainer {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+
+  .SwitchButtonIconContainer {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    overflow: hidden;
+    transition: scale 0.2s ease-in-out;
+
+    &:hover {
+      scale: 1.1;
+    }
+    
+    *:first-child {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      transition: top 0.5s Utils.$SpringTransition 0.2s;
+    }
+
+    *:last-child {
+      position: absolute;
+      top: 100%;
+      left: 0px;
+      transition: top 0.2s ease-in-out;
+    }
+  }
+
+  .On {
+    *:first-child {
+      top: -100%;
+      transition: top 0.2s ease-in-out;
+    }
+
+    *:last-child {
+      top: 0px;
+      transition: top 0.5s Utils.$SpringTransition 0.2s;
+    }
+  }
+}

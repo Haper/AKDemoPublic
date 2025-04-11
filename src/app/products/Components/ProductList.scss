@@ -1,0 +1,87 @@
+:root {
+  --prod-list-item-bg-1: antiquewhite;
+  --prod-list-item-bg-2: aliceblue;
+  --prod-list-item-bg-3: beige;
+}
+
+[data-theme="dark"] {
+  --prod-list-item-bg-1: theme("colors.gray.700");
+  --prod-list-item-bg-2: theme("colors.gray.800");
+  --prod-list-item-bg-3: theme("colors.gray.900");
+}
+
+.ProductListMainContainer {
+  .ProductsListThumbnail {
+    width: 150px;
+    height: auto;
+    z-index: 1;
+  }
+
+  .ProductsListBgThumbnail {
+    position: absolute;
+    width: 150%;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: contain;
+    opacity: 0;
+    transform-origin: center;
+    animation: bgRotation 20s infinite forwards linear paused;
+    transition: opacity 1s linear;
+  }
+
+  @keyframes bgRotation {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    50% {
+      transform: translate(-50%, -50%) rotate(180deg);
+    }
+
+    100% {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+
+  .BasicListItemContainer:nth-child(3n + 1) {
+    background-color: var(--prod-list-item-bg-1);
+  }
+
+  .BasicListItemContainer:nth-child(3n + 2) {
+    background-color: var(--prod-list-item-bg-2);
+  }
+
+  .BasicListItemContainer:nth-child(3n) {
+    background-color: var(--prod-list-item-bg-3);
+  }
+
+  .BasicListItemContainer {
+    position: relative;
+    flex-direction: row;
+    overflow: hidden;
+    cursor: pointer;
+    text-decoration: none;
+    color: unset;
+    gap: 5px;
+
+    &:hover {
+      .ProductsListBgThumbnail {
+        opacity: 0.2;
+        animation-play-state: running;
+      }
+      filter: brightness(1.1);
+    }
+  }
+
+  &:not(:has(.BasicListItemContainer)) .ListLoaderMainContainer {
+    height: calc(100vh - 80px);
+    height: calc(100dvh - 80px);
+  }
+
+  &:not(:has(.BasicListItemContainer)) .ListErrorMainContainer {
+    height: calc(100vh - 80px);
+    height: calc(100dvh - 80px);
+  }
+}

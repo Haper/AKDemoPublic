@@ -1,0 +1,63 @@
+<svg width="1792" height="1024" viewBox="0 0 1792 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="hGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="white" stop-opacity="0" />
+      <stop offset="10%" stop-color="white" stop-opacity="1" />
+      <stop offset="90%" stop-color="white" stop-opacity="1" />
+      <stop offset="100%" stop-color="white" stop-opacity="0" />
+    </linearGradient>
+    
+    <linearGradient id="vGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="white" stop-opacity="0" />
+      <stop offset="10%" stop-color="white" stop-opacity="1" />
+      <stop offset="90%" stop-color="white" stop-opacity="1" />
+      <stop offset="100%" stop-color="white" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+
+  <rect x="20" y="200" width="150" height="2" fill="url(#hGradient)" />
+  <rect x="20" y="290" width="150" height="2" fill="url(#hGradient)" />
+  <rect x="50" y="170" width="2" height="150" fill="url(#vGradient)" />
+  <rect x="140" y="170" width="2" height="150" fill="url(#vGradient)" />
+
+  <rect x="1410" y="200" width="260" height="2" fill="url(#hGradient)" />
+  <rect x="1410" y="380" width="260" height="2" fill="url(#hGradient)"/>
+  <rect x="1450" y="160" width="2" height="260" fill="url(#vGradient)"/>
+  <rect x="1630" y="160" width="2" height="260" fill="url(#vGradient)"/>
+
+  <rect x="870" y="850" width="180" height="2" fill="url(#hGradient)"/>
+  <rect x="870" y="970" width="180" height="2" fill="url(#hGradient)"/>
+  <rect x="900" y="820" width="2" height="180" fill="url(#vGradient)"/>
+  <rect x="1020" y="820" width="2" height="180" fill="url(#vGradient)"/>
+  
+
+  <rect x="170" y="300" width="110" height="2" fill="url(#hGradient)"/>
+  <rect x="170" y="500" width="110" height="2" fill="url(#hGradient)"/>
+  <rect x="200" y="270" width="2" height="260" fill="url(#vGradient)"/>
+  <rect x="250" y="270" width="2" height="260" fill="url(#vGradient)"/>
+
+  <rect x="1520" y="500" width="110" height="2" fill="url(#hGradient)"/>
+  <rect x="1520" y="700" width="110" height="2" fill="url(#hGradient)"/>
+  <rect x="1550" y="470" width="2" height="260" fill="url(#vGradient)"/>
+  <rect x="1600" y="470" width="2" height="260" fill="url(#vGradient)"/>
+  
+  <rect x="270" y="850" width="260" height="2" fill="url(#hGradient)"/>
+  <rect x="270" y="900" width="260" height="2" fill="url(#hGradient)"/>
+  <rect x="300" y="820" width="2" height="110" fill="url(#vGradient)"/>
+  <rect x="500" y="820" width="2" height="110" fill="url(#vGradient)"/>
+
+  <rect x="1160" y="300" width="260" height="2" fill="url(#hGradient)"/>
+  <rect x="1160" y="350" width="260" height="2" fill="url(#hGradient)"/>
+  <rect x="1190" y="270" width="2" height="110" fill="url(#vGradient)"/>
+  <rect x="1390" y="270" width="2" height="110" fill="url(#vGradient)"/>
+
+
+
+  
+  <rect x="-1191" y="-487.29" width="370.54" height="2" fill="url(#hGradient)" style="transform-origin: -1005.73px -486.594px;" transform="matrix(0.984808, -0.173648, -0.173648, -0.984808, 2011.575209474078, 867.165631713966)"/>
+  <rect x="1378.18" y="1172.63" width="309.575" height="2" fill="url(#hGradient)" style="transform-origin: 1532.97px 1173.13px;" transform="matrix(0.358369, 0.93358, -0.93358, 0.358368, -380.69997082379, -729.659768642594)"/>
+  <rect x="895.287" y="688.273" width="387.244" height="2" fill="url(#hGradient)" style="transform-origin: 1088.91px 688.773px;" transform="matrix(0.866025, -0.5, 0.5, 0.866025, -22.503100030522, -91.208823644982)"/>
+  <rect x="700.817" y="670" width="300.326" height="2" fill="url(#hGradient)" transform="matrix(1, 0, 0, 1, 0, -2.842170943040401e-14)"/>
+  <rect x="598.524" y="3658.82" width="431.982" height="2" fill="url(#hGradient)" style="transform-origin: 814.515px 3659.32px;" transform="matrix(0.477159000001, -0.878817, 0.878819, 0.477156, 9.818039562055, -3124.589894884638)"/>
+
+</svg>

@@ -1,0 +1,88 @@
+.react-international-phone-input-container {
+  --react-international-phone-height: auto;
+  --react-international-phone-dropdown-top: #{calc(100% + 4px)};
+  --react-international-phone-border-color: var(--border-color);
+  --react-international-phone-border-radius: 8px;
+  --react-international-phone-text-color: var(--default-text-color);
+  --react-international-phone-dropdown-item-text-color: var(--default-text-color);
+  
+  --react-international-phone-country-selector-background-color-hover: theme("colors.blue.100");
+  --react-international-phone-country-selector-border-color: var(--border-color);
+  --react-international-phone-country-selector-background-color: var(--base-form-section-bg);
+  --react-international-phone-dropdown-item-background-color: var(--base-form-section-bg);
+  --react-international-phone-hover-dropdown-item-background-color: theme("colors.blue.100");
+  --react-international-phone-selected-dropdown-item-text-color: theme('colors.white');
+  --react-international-phone-selected-dropdown-item-background-color: theme("colors.blue.500");
+
+  --react-international-phone-dropdown-item-dial-code-color: #{gray};
+  --react-international-phone-selected-dropdown-item-dial-code-color: theme('colors.white');
+
+  width: 100%;
+  max-width: 25rem;
+
+  &:focus-within {
+    --react-international-phone-border-color: var(--border-color-focus);
+    --react-international-phone-country-selector-border-color: var(--border-color-focus);
+  }
+
+  .react-international-phone-input {
+    flex: 1;
+    background-color: var(--base-form-section-bg);
+    padding: 4px 8px;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  .react-international-phone-country-selector-button {
+    height: 100%;
+  }
+
+  .react-international-phone-country-selector-button__dropdown-arrow {
+    display: none;
+  }
+
+  .react-international-phone-country-selector-dropdown {
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+
+    &:focus {
+      outline: 0;
+      box-shadow: none;
+    }
+  }
+
+  .react-international-phone-country-selector-dropdown__list-item:hover {
+    background-color: var(--react-international-phone-hover-dropdown-item-background-color);
+  }
+
+  @media (max-width: 768px) {
+    .react-international-phone-input {
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+  }
+}
+
+.PhoneInputLabel {
+  position: absolute;
+  bottom: calc(100% + 3px);
+  left: 1px;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  opacity: 0.5;
+  white-space: nowrap;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+[data-theme="dark"] {
+  .react-international-phone-input-container {
+    --react-international-phone-country-selector-background-color-hover: theme("colors.gray.700");
+    --react-international-phone-hover-dropdown-item-background-color: theme("colors.gray.700");
+    --react-international-phone-selected-dropdown-item-background-color: theme("colors.gray.500");
+
+    --react-international-phone-dropdown-item-dial-code-color: #{gray};
+    --react-international-phone-selected-dropdown-item-dial-code-color: theme('colors.white');
+  }
+}

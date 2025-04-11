@@ -1,0 +1,92 @@
+@use "./Colors.scss";
+
+:root {
+  --base-form-section-bg: theme("colors.sky.50");
+  --base-form-section-border-color: transparent;
+  --base-form-section-shadow-color: #{Colors.$black-t10};
+  --base-form-submit-button-bg-hover: theme("colors.sky.200");
+  --base-form-submit-button-bg-active: theme("colors.sky.300");
+  --base-form-submit-button-color-disabled: theme("colors.gray.400");
+  --base-form-submit-button-bg-disabled: transparent;
+  --base-form-section-accept-icon-color: theme("colors.green.500");
+  --base-form-section-decline-icon-color: theme("colors.red.500");
+}
+
+[data-theme="dark"] {
+  --base-form-section-bg: theme("colors.gray.800");
+  --base-form-section-border-color: var(--border-color);
+  --base-form-submit-button-bg-hover: theme("colors.sky.700");
+  --base-form-submit-button-bg-active: theme("colors.sky.600");
+  --base-form-submit-button-color-disabled: theme("colors.gray.600");
+  --base-form-submit-button-bg-disabled: transparent;
+  --base-form-section-decline-icon-color: theme("colors.amber.500");
+}
+
+.BasicFormMainContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  background-color: var(--base-form-section-bg);
+  padding: 30px;
+  border: 1px solid var(--base-form-section-border-color);
+  border-radius: 15px;
+  gap: 28px;
+  box-shadow: 0px 0px 10px 0px var(--base-form-section-shadow-color);
+  transition: background-color 0.3s ease-in-out;
+
+  .TextInputMainContainer, .TextAreaMainContainer {
+    width: 100%;
+    max-width: 25rem;
+  }
+
+  .TextInputVerticalContainer {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+    max-width: 25rem;
+
+    p {
+      color: var(--base-form-section-decline-icon-color);
+    }
+
+    .AcceptIconContainer {
+      position: absolute;
+      top: 50%;
+      left: calc(100% + 5px);
+      transform: translateY(calc(-50% - 2px));
+      color: var(--base-form-section-accept-icon-color);
+    }
+
+    .DeclineIconContainer {
+      color: var(--base-form-section-decline-icon-color);
+    }
+  }
+
+  .SubmitButton {
+    border-radius: 8px;
+    padding: 4px 8px;
+    border: 1px solid var(--border-color);
+
+    &:hover {
+      background-color: var(--base-form-submit-button-bg-hover);
+    }
+
+    &:active {
+      background-color: var(--base-form-submit-button-bg-active);
+    }
+
+    &:focus,
+    &:focus-visible {
+      border-color: var(--border-color-focus);
+    }
+
+    &:disabled {
+      color: var(--base-form-submit-button-color-disabled);
+      background-color: var(--base-form-submit-button-bg-disabled);
+    }
+  }
+}

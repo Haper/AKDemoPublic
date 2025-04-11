@@ -1,0 +1,97 @@
+@use '../../SharedStyles/Colors.scss';
+
+:root {
+  --user-card-bg: aliceblue;
+  --user-card-icon-border: theme("colors.white");
+  --user-card-icon-bg: theme("colors.white");
+  --user-card-modal-shadow: #{Colors.$black-t10};
+  --user-card-title-gradient-1: #4158d0;
+  --user-card-title-gradient-2: #c850c0;
+  --user-card-title-gradient-3: #ffcc70;
+}
+
+[data-theme="dark"] {
+  --user-card-bg: theme("colors.gray.900");
+  --user-card-icon-border: theme("colors.gray.300");
+  --user-card-icon-bg: theme("colors.gray.700");
+
+  --user-card-modal-shadow: #{Colors.$black-t50};
+
+  --user-card-title-gradient-1: #2c3e50;
+  --user-card-title-gradient-2: #6d435a;  
+  --user-card-title-gradient-3: #b37d35;
+}
+
+.UserCardMainContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: var(--user-card-bg);
+  overflow: hidden;
+  border-radius: 16px;
+
+  .UserCardHeader {
+    display: none;
+  }
+
+  .UsersCardIcon {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    margin-top: 10px;
+    border: 2px solid var(--user-card-icon-border);
+    z-index: 1;
+    background-color: var(--user-card-icon-bg);
+  }
+
+  table {
+    max-width: 100%;
+    overflow: hidden;
+  
+    td {
+      padding: 5px;
+    }
+
+    td:nth-child(1) {
+      padding-left: 0px;
+      width: 10px;
+    }
+
+    td:nth-child(2) {
+      width: 10px;
+    }
+
+    td:nth-child(3) {
+      max-width: 100px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      padding-right: 0px;
+    }
+  }
+}
+
+.UserCardMainContainerModal {
+  position: fixed;
+  width: 400px;
+  z-index: 3000;
+  color: var(--default-text-color);
+  box-shadow: 0 4px 10px var(--user-card-modal-shadow);
+  pointer-events: none;
+
+  .UserCardHeader {
+    display: flex;
+    position: absolute;
+    border-radius: 12px;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    height: 100px;
+    background-image: linear-gradient(
+      43deg,
+      var(--user-card-title-gradient-1) 0%,
+      var(--user-card-title-gradient-2) 46%,
+      var(--user-card-title-gradient-3) 100%
+    );
+  }
+}

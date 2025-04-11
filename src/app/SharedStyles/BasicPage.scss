@@ -1,0 +1,32 @@
+@use '../SharedStyles/Colors.scss';
+
+.BasicPageMainContainer {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin-left: var(--menu-current-width);
+  transition: margin-left 0.3s ease-in-out;
+  overflow: hidden;
+
+  .BasicPageCenterContainer {
+    display: flex;
+    position: relative;
+    height: 100vh;
+    height: 100dvh;
+    padding-top: 80px;
+    overflow: auto;    
+  }
+
+  @media (max-width: 768px) {
+    overflow: visible;
+    transition: margin-left 0s ease-in-out;
+    margin-left: 0px;
+
+    .BasicPageCenterContainer {
+      height: unset;
+      min-height: 100vh;
+      min-height: 100dvh;
+      overflow: visible;
+    }  
+  }
+}

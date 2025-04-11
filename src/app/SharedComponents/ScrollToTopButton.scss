@@ -1,0 +1,56 @@
+@use '../SharedStyles/Colors.scss';
+
+:root {
+  --stt-button-color: theme(colors.blue.400); //rgb(31, 169, 255)
+  --stt-button-border-color: theme(colors.white);
+  --stt-button-bg: #{Colors.$black-t10};
+  --stt-button-bg-hover: #{Colors.$white-t70};
+}
+
+[data-theme="dark"] {
+  --stt-button-color: theme("colors.blue.300");
+  --stt-button-border-color: theme("colors.gray.600");
+  --stt-button-bg: #{Colors.$white-t20};
+  --stt-button-bg-hover: #{Colors.$black-t30};
+}
+
+.ScrollToTopButton {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 100;
+  background-color: var(--stt-button-bg);
+  color:var(--stt-button-color);
+  border: 2px solid var(--stt-button-border-color);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+
+  &:hover {
+    scale: 1.1;
+    background-color: var(--stt-button-bg-hover);
+  }
+
+  svg {
+    width: 36px;
+    height: 36px;
+    align-self: center;
+  }
+}
+
+.ScrollToTopButtonShow {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .ScrollToTopButton {
+    right: 20px;
+  }
+}

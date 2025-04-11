@@ -1,0 +1,48 @@
+.BasicGridMainContainer {
+  display: grid;
+  grid-gap: 20px;
+  padding: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  width: 100%;
+  overflow: visible;
+
+  .BasicGridItemContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    padding: 20px;
+    border: 1px solid var(--border-color-2);
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.5s ease-in-out;
+
+    &:hover {
+      background-color: var(--list-bg-color);
+    }
+  }
+
+  .BasicGridLoaderContainer {
+    display: flex;
+    grid-column: 1/-1;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .BasicGridMainContainer {
+    padding: 0px;
+    grid-gap: 0px;
+    grid-template-columns: 1fr;
+
+    .BasicGridItemContainer {
+      border: none;
+      border-radius: 0px;
+    }
+  }
+}

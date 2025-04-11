@@ -1,0 +1,28 @@
+@use '../SharedStyles/Colors.scss';
+
+:root {
+  --dummy-json-link-color: theme("colors.white");
+  --dummy-json-link-bg: #{Colors.$black-t50};
+}
+
+.DummyJsonLink {
+  position: fixed;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: bold;
+  padding: 4px 8px;
+  color: var(--dummy-json-link-color);
+  background-color: var(--dummy-json-link-bg);
+  bottom: 0px;
+  right: 0px;
+  z-index: 50;
+  border-top-left-radius: 0.5rem;
+  text-wrap: nowrap;
+
+  @media (max-width: 768px) {
+    right: 50%;
+    transform: translateX(50%);
+    border-radius: 0.5rem;
+    bottom: 5px;
+  }
+}

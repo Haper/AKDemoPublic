@@ -1,0 +1,81 @@
+@use "../../SharedStyles/Colors.scss";
+
+:root {
+  --prod-det-content-bg: #{Colors.$white-t50};
+  --prod-det-bg-1: antiquewhite;
+  --prod-det-bg-2: aliceblue;
+  --prod-det-bg-3: beige;
+}
+
+[data-theme="dark"] {
+  --prod-det-content-bg: #{Colors.$white-t20};
+  --prod-det-bg-1: theme("colors.gray.700");
+  --prod-det-bg-2: theme("colors.gray.800");
+  --prod-det-bg-3: theme("colors.gray.900");
+}
+
+.ProductDetailsMainContainer {
+  .BasicPageCenterContainer {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    padding-top: 100px;
+  }
+
+  .BigSectionsContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .FirstSectionContainer {
+    display: flex;
+    flex: 3 1 70%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  @media (max-width: 768px) {
+    .FirstSectionContainer {
+      flex-direction: column;
+    }
+  }
+
+  .ProductDetailsContentContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: var(--prod-det-content-bg);
+    border-radius: 15px;
+    border: 1px solid var(--border-color);
+    min-width: 350px;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+    h5:not(:last-of-type) {
+      margin-bottom: 10px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .ProductDetailsContentContainer {
+      min-width: unset;
+    }
+  }
+
+  .MaxWidth1220 {
+    max-width: 1220px;
+  }
+}
+
+.BgOne {
+  background-color: var(--prod-det-bg-1);
+}
+.BgTwo {
+  background-color: var(--prod-det-bg-2);
+}
+.BgThree{
+  background-color: var(--prod-det-bg-3);
+}
